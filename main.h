@@ -22,6 +22,22 @@ int print_pointer(va_list);
 int print_rev_string(va_list);
 int _putchar(char);
 int buffer(char);
+char *itoa(long int nu, int bs);
+int print_binary(va_list num);
+int print_char(va_list num);
+int print_hexadecimal_low(va_list num);
+int print_hexadecimal_upp(va_list num);
+int is_lowercase(char b);
+char *string_to_upper(char *str);
+int is_lowercase(char);
+char *string_to_upper(char *);
+int _strcmp(char *str1, char *str2);
+int print_pointer(va_list num);
+int _strcmp(char *, char *);
+int print_rev_string(va_list num);
+int print_string(va_list num);
+int print_unsigned(va_list num);
+
 /**
  * struct _format - typedef struct
  * @type: format
