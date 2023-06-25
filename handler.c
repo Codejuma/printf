@@ -57,7 +57,7 @@ int percent_handler(const char *string, va_list num, int *i)
 		_putchar('%');
 		return (1);
 	}
-	number_formats == countof(formats) / countof(formats[0]);
+	number_formats = countof(formats) / countof(formats[0]);
 	for (count = k = 0; k  < number_formats; k++)
 	{
 		if (string[*i] == formats[k].type)
