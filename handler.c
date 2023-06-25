@@ -1,21 +1,21 @@
 #include "main.h"
 /**
  * handler - Controller
- * @string: string
+ * @s: string
  * @num: argument list
  *
  * Return: Total size of argument
  */
-int handler(const char *string, va_list num)
+int handler(const char *s, va_list num)
 {
 	int count, i, aux;
 
 	count = 0;
-	for (i = 0; string[i] != 0; i++)
+	for (i = 0; s[i] != 0; i++)
 	{
-		if (string[i] == '%')
+		if (s[i] == '%')
 		{
-			aux = percent_handler(string, num, &i);
+			aux = percent_handler(s, num, &i);
 			if (aux == -1)
 				return (-1);
 
@@ -23,7 +23,7 @@ int handler(const char *string, va_list num)
 			continue;
 		}
 
-		_putchar(string[i]);
+		_putchar(s[i]);
 		count = count + 1;
 	}
 
@@ -32,13 +32,13 @@ int handler(const char *string, va_list num)
 
 /**
  * percent_handler - percent format controller
- * @string: string format
+ * @s: string format
  * @num: list of argument
  * @i: iterator
  *
  * Return: size of number of printed elements
  */
-int percent_handler(const char *string, va_list num, int *i)
+int percent_handler(const char *s, va_list num, int *i)
 {
 	int count, k, number_formats;
 	format formats[] = {
@@ -50,22 +50,22 @@ int percent_handler(const char *string, va_list num, int *i)
 		{'r', print_rev_string}, {'R', print_rot}
 	};
 	*i = *i + 1;
-	if (string[*i] == '\0')
+	if (s[*i] == '\0')
 		return (-1);
-	if (string[*i] == '%')
+	if (s[*i] == '%')
 	{
 		_putchar('%');
 		return (1);
 	}
-	number_formats = countof(formats) / countof(formats[0]);
+	number_formats = sizeof(formats) / sizeof(formats[0]);
 	for (count = k = 0; k  < number_formats; k++)
 	{
-		if (string[*i] == formats[k].type)
+		if (s[*i] == formats[k].type)
 		{
 			count = formats[k].f(num);
 			return (count);
 		}
 	}
-	_putchar('%'), _putchar(string[*i]);
+	_putchar('%'), _putchar(s[*i]);
 	return (2);
 }

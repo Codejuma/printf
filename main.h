@@ -37,6 +37,8 @@ int _strcmp(char *, char *);
 int print_rev_string(va_list num);
 int print_string(va_list num);
 int print_unsigned(va_list num);
+int percent_handler(const char *s, va_list num, int *i);
+int handler(const char *s, va_list num);
 
 /**
  * struct _format - typedef struct
