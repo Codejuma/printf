@@ -4,18 +4,18 @@
 #include <stdlib.h>
 #include <stdarg.h>
 int _printf(const char *, ...);
-int _strlen(const char *);
-int print(char *);
+int _strlen(const char *s);
+int print(char *s);
 char *itoa(long int, int);
-int handler(const char *, va_list);
-int percent_handler(const char *, va_list, int *);
+int handler(const char *string, va_list num);
+int percent_handler(char *string, va_list num, int *j);
 int print_string(va_list);
 int print_char(va_list);
-int print_integer(va_list);
+int print_integer(va_list num);
 int print_binary(va_list);
-int print_rot(va_list);
+int rot13(char *str);
 int print_unsigned(va_list);
-int print_octal(va_list);
+int print_octal(va_list num);
 int print_hexadecimal_low(va_list);
 int print_hexadecimal_upp(va_list);
 int print_pointer(va_list);
