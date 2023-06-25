@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int count;
 	va_list args;
 
-	if (*format == NULL)
+	if (!*format)
 		return (-1);
 
 	count = _strlen(*format);
