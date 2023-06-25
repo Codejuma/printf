@@ -1,4 +1,4 @@
-#include "nmain.h"
+#include "main.h"
 /**
  * print_integer - print number to base 10
  * @num: number printed to base 10

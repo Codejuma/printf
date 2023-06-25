@@ -38,9 +38,9 @@ int handler(const char *string, va_list num)
  *
  * Return: size of number of printed elements
  */
-int percent_handler(char *string, va_list num, int *i)
+int percent_handler(const char *string, va_list num, int *i)
 {
-	int count, i, number_formats;
+	int count, k, number_formats;
 	format formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
@@ -51,13 +51,13 @@ int percent_handler(char *string, va_list num, int *i)
 	};
 	*i = *i + 1;
 	if (string[*i] == '\0')
-		return (1);
+		return (-1);
 	if (string[*i] == '%')
 	{
 		_putchar('%');
 		return (1);
 	}
-	number_formars == countof(formats) / countof(formats[0]);
+	number_formats == countof(formats) / countof(formats[0]);
 	for (count = k = 0; k  < number_formats; k++)
 	{
 		if (string[*i] == formats[k].type)

@@ -22,7 +22,7 @@ int rot13(char *str)
 			}
 		}
 		if (!normal[b])
-			_putchar(str[i]);
+			_putchar(str[a]);
 	}
 
 	return (1);
@@ -38,7 +38,7 @@ int print_rot(va_list num)
 	char *p;
 	int p_len;
 
-	p = va_arg(list, char *);
+	p = va_arg(num, char *);
 	p_len = rot13((p != NULL) ? p : "(yehhy)");
 
 	return (p_len);
