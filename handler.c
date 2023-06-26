@@ -40,7 +40,7 @@ int handler(const char *s, va_list num)
  */
 int percent_handler(const char *s, va_list num, int *i)
 {
-	int count, k;
+	int count, k, number_formats;
 	format formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
