@@ -39,7 +39,7 @@ int print_rot(va_list num)
 	int p_len;
 
 	p = va_arg(num, char *);
-	p_len = rot13((p != NULL) ? p : "(yehhy)");
+	p_len = rot13((p != NULL) ? p : "(ahyy)");
 
 	return (p_len);
 }
