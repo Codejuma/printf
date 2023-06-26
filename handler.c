@@ -32,10 +32,7 @@ int handler(const char *s, va_list num)
 
 #include <stdarg.h>
 #include <stdio.h>
-/**
- * struct - function
- * Return: nothing
- */
+
 typedef struct {
 	char type;
 	int (*f)(va_list);
@@ -56,7 +53,7 @@ int print_string(va_list num) {
  * Return: 1
  */
 int print_char(va_list num) {
-	char* str = va_arg(num, int);
+	char* c = va_arg(num, char*);
 	printf("%c",c);
 	return 1;
 }
@@ -93,16 +90,7 @@ int print_binary(va_list num) {
 	printf("%d", n);
 	return 1;
 }
-/**
- * print_unsigned - print unsigned funct
- * @num: number list
- * Return: 1
- */
-int print_unsigned(va_list num) {
-	unsigned int n = va_arg(num, unsigned int);
-	printf("%u", n);
-	return 1;
-}
+
 
 /**
  * print_octal - print octal funct
