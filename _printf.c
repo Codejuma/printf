@@ -7,8 +7,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int count;
 	va_list args;
+	int count;
 
 	if (format == NULL)
 		return (-1);
