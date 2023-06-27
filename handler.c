@@ -32,11 +32,17 @@ int handler(const char *s, va_list num)
 
 #include <stdarg.h>
 #include <stdio.h>
-
-typedef struct {
+/**
+ * struct _format - typedef struct
+ * @type: format
+ * @f: the function to be associated
+ */
+typedef struct _format
+{
 	char type;
 	int (*f)(va_list);
 } format;
+
 /**
  * print_string - print string funct
  * @num: number list
